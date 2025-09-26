@@ -4,7 +4,7 @@ class Lotto {
   List<int> numbers = []; // 발급된 로또 번호를 담는 리스트
 
   // 로또 번호 발급
-  void Lottonum() {
+  void LottoNum() {
     numbers.clear();
     Random random = Random();
 
@@ -12,6 +12,7 @@ class Lotto {
       int num = random.nextInt(45) + 1; // 1~45 사이 숫자
       if (!numbers.contains(num)) {
         // 중복을 방지하기 위해 뽑은 숫자인지 contains로 확인
+        // list 안에 num이 없다면 추가
         numbers.add(num);
       }
     }
@@ -45,10 +46,10 @@ class Lotto {
 void main() {
   Lotto lotto = Lotto();
 
-  lotto.Lottonum();
+  lotto.LottoNum();
 
-  List<int> winningNumbers = [9, 19, 29, 35, 37, 38];
-  lotto.checkResult(winningNumbers);
+  List<int> winning = [9, 19, 29, 35, 37, 38];
+  lotto.checkResult(winning);
 
   lotto.resetLotto();
 }
