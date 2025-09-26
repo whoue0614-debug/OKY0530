@@ -17,13 +17,13 @@ class Lotto {
       }
     }
 
-    numbers.sort(); // 보기 좋게 정렬
+    numbers.sort(); // 숫자가 오름차순 으로 나올 수 있게 정렬하는 기능
     print("발급한 로또 번호: $numbers");
   }
 
-  // 당첨 여부 확인
-  void checkResult(List<int> winningNumbers) {
-    int matchCount = numbers.where((n) => winningNumbers.contains(n)).length;
+  // 당첨여부 확인
+  void checkResult(List<int> winning) {
+    int matchCount = numbers.where((n) => winning.contains(n)).length;
 
     if (matchCount >= 5) {
       print("당첨 여부 : 1등");
